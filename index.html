@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Assignment01</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+    <h2>the Landscape of Guilin</h2>
+    <svg viewBox="0 0 1366 768">
+        <defs>
+            <!--far mountain-->
+            <path
+                d="M0,180 Q235,360 480,210 Q520,190 560,220 Q700,410 900,290 Q930,280 960,300 Q1190,490 1366,320 V470 H0 Z"
+                stroke="#D0DFE2" fill="#D0DFE2" id="farMountain" />
+
+            <!--near mountain-->
+            <g id="mountain">
+                <path d="M360,470 Q400,200 490,470" fill="#8EC7D2" />
+                <path d="M300,470 Q390,310 440,470" fill="#92D4D0" />
+                <path d="M280,470 Q350,270 400,470" fill="#92D4D0" />
+                <path d="M260,470 Q330,220 360,470" fill="#92D4D0" />
+                <path d="M220,470 Q290,250 320,470" fill="#92D4D0" />
+                <path d="M170,470 220,360 Q228,300 260,370 Q280,400 300,470" fill="#0089AD" />
+                <path d="M100,470 Q170,160 190,400 Q230,470 260,470 " fill="#00B5AC" />
+                <path d="M0,470 Q70,100 130,400 Q170,470 180,470 " fill="#0191A9" />
+                <path d="M420,470 Q460,300 500,470" fill="#69B8C7" />
+                <path d="M450,470 Q500,270 570,470" fill="#69B8C7" />
+            </g>
+
+            <!--boat-->
+            <g id="boat">
+                <polygon points="390,600 610,600 555,615 510,620 460,620 440,610" fill="#646464" stroke="none"
+                    linejoin="round"></polygon>
+                <rect x="410" y="590" width="30" height="10" fill="#929292" stroke="none" linejoin="round"></rect>
+                <rect x="405" y="585" width="40" height="5" fill="#929292" stroke="none" linejoin="round"></rect>
+                <rect x="520" y="580" width="50" height="20" fill="#929292" stroke="none" linejoin="round"></rect>
+                <polygon points="515,580 525,570 565,570 575,580" fill="#b36b00" stroke="none"></polygon>
+
+                <line x1="535" y1="540" x2="410" y2="620" stroke="#800000" stroke-width="2"></line>
+                <polygon points="480,550 465,560 495,560" fill="none" stroke="#6F6969" stroke-width="2"></polygon>
+                <rect x="475" y="560" width="10" height="6" fill="#6F6969" stroke="none" linejoin="round"></rect>
+                <ellipse cx="480" cy="580" rx="10" ry="15" fill="#6F6969" stroke="none"></ellipse>
+                <circle cx="468" cy="580" r="5" fill="#929292" stroke="none"></circle>
+                <circle cx="492" cy="575" r="5" fill="#929292" stroke="none"></circle>
+                <rect x="473" y="593" width="12" height="8" fill="#929292" stroke="none" linejoin="round"></rect>
+            </g>
+
+            <!--clouds-->
+            <path d="M400,150 Q420,70 500,110 Q540,95 560,130 Q580,120 600,130 Q670,180 590,220 Q490,220 400,220 Q340,185 400,150" 
+                fill="white" stroke="lightgrey" stroke-width="3" id="cloud" opacity="0.8" />
+
+             <!--rains-->
+            <pattern id="p01" x="0" y="0" width="60" height="768" patternUnits="userSpaceOnUse" patternTransform="rotate(10 15 20)">
+                <line x1="20" y1="0" x2="20" y2="768" stroke-width="1" stroke="white"
+                    stroke-dasharray="25,20,30,20,25" id="rainLine"></line>
+                <line x1="40" y1="0" x2="40" y2="768" stroke-width="1" stroke="white"
+                    stroke-dasharray="20,15,35,25,21" id="rainLine"></line>
+                <line x1="59" y1="0" x2="59" y2="768" stroke-width="1" stroke="white"
+                    stroke-dasharray="15,32,24,18,28" id="rainLine"></line>
+            </pattern>
+            
+        </defs>
+        
+        <!--background color #EAF8FF #E9E8E6 grey-->
+        <rect x="0" y="0" width="1366" height="768" fill="#EAF8FF" id="sky"></rect>
+        <!--sun-->
+        <circle cx="880" cy="120" r="50" fill="#E26569" stroke="null"></circle>
+        <!--far Mountain-->
+        <use xlink:href="#farMountain"></use>
+        <use xlink:href="#farMountain" transform="rotate(180 683 470) scale(-1,1) translate(-1366,0)" opacity="0.6">
+        </use>
+        <!--near Mountain-->
+        <use xlink:href="#mountain"></use>
+        <use xlink:href="#mountain" transform="translate(1366,0) scale(-1,1)"></use>
+        <use xlink:href="#mountain" transform="rotate(180 683 470) scale(-1,1) translate(-1366,0)" opacity="0.4"></use>
+        <use xlink:href="#mountain" transform="rotate(180 683 470) " opacity="0.4"></use>
+        <!--river area #B6D3E2 #A8DAD7 lv-->
+        <rect x="0" y="470" width="1366" height="298" stroke="none" fill="#B6D3E2" opacity="0.4" id="river"></rect>
+        <!--boat-->
+        <use xlink:href="#boat" id="boatUse1"></use>
+        <use xlink:href="#boat" transform="rotate(180 480 622) scale(-1,1) translate(-960,0)" opacity="0.3"></use>
+        <!--clouds-->
+        <use xlink:href="#cloud" transform="translate(100,-55) scale(0.9)"></use>
+        <use xlink:href="#cloud" transform="translate(190,-35)"></use>>
+        <use xlink:href="#cloud" transform="translate(800,40) scale(0.7)"></use>
+        <use xlink:href="#cloud" transform="translate(-300,30) scale(0.6)"></use>
+        <!--rain pattern-->
+        <rect x="0" y="0" width="1366" height="768" fill="url(#p01)" stroke="none" id="rain"></rect>
+    </svg>
+</body>
+
+</html>

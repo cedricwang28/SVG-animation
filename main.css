@@ -1,0 +1,70 @@
+h2{
+    text-align: center;   
+}
+
+#boat{
+    animation: boatMove 16s linear forwards;
+}
+@keyframes boatMove{
+    from{
+        transform: translate(0px,0);
+    }
+    to{
+       transform: translate(800px,0);
+    }
+}
+
+
+
+@keyframes rainMove{
+    
+    to{
+        stroke-dashoffset: 0;
+    }
+}
+@keyframes rainEmerge{
+    
+    to{
+        opacity: 1;
+        
+    }
+}
+
+#rain{
+    opacity: 0;
+    animation: rainEmerge 6s 3s linear forwards;
+}
+
+#rainLine{
+
+    stroke-dashoffset: 768;
+
+    animation: rainMove 2s  linear infinite;
+}
+
+
+@keyframes skyChange{
+    to{
+        fill: #E9E8E6;
+    }
+}
+@keyframes riverChange{
+    to{
+        fill: #A8DAD7;
+    }
+}
+#sky{
+    animation: skyChange 3s 4s linear forwards;
+}
+#river{
+    animation: riverChange 3s 4s linear forwards;
+}
+
+@keyframes cloudChange{
+    to{
+        transform: translate(170px,0);
+    }
+}
+#cloud{
+    animation: cloudChange 6s linear forwards;
+}
